@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.date = %q{2008-12-23}
   s.description = %q{Simple module that adds daemon functionality to a Ruby script.}
   s.email = %q{jon@slantwisedesign.com}
-  s.extra_rdoc_files = ["History.txt", "License.txt", "Manifest.txt", "README.txt", "website/index.txt"]
-  s.files = ["History.txt", "License.txt", "Manifest.txt", "README.markdown", "Rakefile", "lib/simple-daemon.rb", "lib/simple-daemon/version.rb", "scripts/txt2html", "setup.rb", "spec/simple-daemon_spec.rb", "spec/spec.opts", "spec/spec_helper.rb", "website/index.html", "website/index.txt", "website/javascripts/rounded_corners_lite.inc.js", "website/stylesheets/screen.css", "website/template.rhtml"]
+  s.extra_rdoc_files = ["History.txt", "License.txt", "Manifest.txt", "README.markdown", "README.txt", "website/index.txt"]
+  s.files = ["History.txt", "License.txt", "Manifest.txt", "README.markdown", "README.txt", "Rakefile", "lib/simple-daemon.rb", "lib/simple-daemon/version.rb", "scripts/txt2html", "setup.rb", "spec/simple-daemon_spec.rb", "spec/spec.opts", "spec/spec_helper.rb", "website/index.html", "website/index.txt", "website/javascripts/rounded_corners_lite.inc.js", "website/stylesheets/screen.css", "website/template.rhtml"]
   s.has_rdoc = true
   s.homepage = %q{http://simple-daemon.rubyforge.org}
   s.rdoc_options = ["--main", "README.txt"]
