@@ -74,7 +74,7 @@ module SimpleDaemon
         trap("TERM") {daemon.stop; exit}
         daemon.start
       end
-      puts "Daemon started."
+      puts "[#{Time.now}] Daemon started."
     end
 
     def self.stop(daemon)
