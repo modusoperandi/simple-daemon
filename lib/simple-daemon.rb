@@ -1,5 +1,7 @@
-require 'simple-daemon/version'
+require File.dirname(__FILE__)+'/simple-daemon/version'
 require 'fileutils'
+require 'logger'
+
 
 module SimpleDaemon
 
@@ -16,6 +18,9 @@ module SimpleDaemon
       Controller.daemonize(self)
     end
 
+    def self.logger
+      @logger ||= Logger.new("#{SimpleDaemon::LOG_DIRECTORY}/#{classname}.log")
+    end
 
   private
 
@@ -65,16 +70,10 @@ module SimpleDaemon
           exit 1
         end
         PidFile.store(daemon, Process.pid)
-        Dir.chdir SimpleDaemon::LOG_DIRECTORY
-        File.umask 0000
-        log = File.new("#{daemon.classname}.log", "a")
-        STDIN.reopen "/dev/null"
-        STDOUT.reopen log
-        STDERR.reopen STDOUT
         trap("TERM") {daemon.stop; exit}
         daemon.start
       end
-      puts "[#{Time.now}] Daemon started."
+      puts "Daemon started."
     end
 
     def self.stop(daemon)
