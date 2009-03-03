@@ -2,9 +2,9 @@ require 'simple-daemon/version'
 require 'fileutils'
 
 module SimpleDaemon
-  class Base
 
-    def self.classname      
+  class Base
+    def self.classname
       underscore(name.split("::").last)
     end
 
@@ -16,7 +16,8 @@ module SimpleDaemon
       Controller.daemonize(self)
     end
 
-    private
+
+  private
 
     def self.underscore(camel_cased_word)
       camel_cased_word.to_s.
@@ -27,6 +28,7 @@ module SimpleDaemon
     end
   end
 
+
   module PidFile
     def self.store(daemon, pid)
       File.open(daemon.pid_fn, 'w') {|f| f << pid}
@@ -36,6 +38,7 @@ module SimpleDaemon
       IO.read(daemon.pid_fn).to_i rescue nil
     end
   end
+
 
   module Controller
     def self.daemonize(daemon)
@@ -86,4 +89,5 @@ module SimpleDaemon
       puts "Pid file found, but process was not running. The daemon may have died."
     end
   end
+
 end
