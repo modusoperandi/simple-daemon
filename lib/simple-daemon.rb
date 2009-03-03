@@ -9,7 +9,7 @@ module SimpleDaemon
     end
 
     def self.pid_fn
-      File.join(SimpleDaemon::WORKING_DIRECTORY, "#{classname}.pid")
+      File.join(SimpleDaemon::PID_DIRECTORY, "#{classname}.pid")
     end
 
     def self.daemonize
@@ -65,7 +65,7 @@ module SimpleDaemon
           exit 1
         end
         PidFile.store(daemon, Process.pid)
-        Dir.chdir SimpleDaemon::WORKING_DIRECTORY
+        Dir.chdir SimpleDaemon::LOG_DIRECTORY
         File.umask 0000
         log = File.new("#{daemon.classname}.log", "a")
         STDIN.reopen "/dev/null"

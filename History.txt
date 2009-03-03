@@ -1,8 +1,24 @@
+== 0.1.4 2009-03-03
+
+* 1 minor enhancement:
+  * Separated WORKING_DIRECTORY into LOG_DIRECTORY and PID_DIRECTORY
+
+== 0.1.3 2008-12-23
+
+* 2 minor enhancements:
+  * Fixes bug where the start command will start two instances of the daemon
+  * GitHub compatible gemspec
+
+== 0.1.2.x 2008-06-17
+
+* 1 minor enhancement:
+  * Lowercase pid and log filenames
+
 == 0.1.2 2007-07-08
 
 * 2 minor enhancements:
   * Renamed WorkingDirectory constant to WORKING_DIRECTORY
-  * Renamed logfile and PIDfile to ignore namespacing 
+  * Renamed logfile and PIDfile to ignore namespacing
       (e.g. log/Job.pid, not log/Foo::Job.pid)
 
 == 0.1.1 2007-07-08
@@ -24,4 +40,3 @@
 
 * 1 major enhancement:
   * Initial release
-  
